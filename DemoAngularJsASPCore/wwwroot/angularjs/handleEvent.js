@@ -20,4 +20,7 @@ myApp.controller('myController', ['$scope', function ($scope) {
     $scope.IncreaseDisLike = function (tech) {
         tech.DisLike++;
     }
+    $scope.hideLike = false;
+    $scope.showDisLike = true;
+
 }]);

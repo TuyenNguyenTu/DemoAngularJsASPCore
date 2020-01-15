@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewData["Title"] = "HideShow";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section angularSC{
+    <script src="~/angularjs/hideShow.js"></script>
+}
+
+<style>
+    i {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+    .up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+</style>
+<div ng-app="MyApp">
+    <div ng-controller="myControl">
+        <br />
+        Tìm kiếm: <input type="text" ng-model="searchString" />
+        <input type="checkbox" ng-model="hideLike" /> Ẩn lượng like
+        <input type="checkbox" ng-model="showDisLike" /> Hiển thị dislike
+        
+        <div class="row">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td ng-click="sortData('Name')">Name <i ng-class="getSortClass('Name')"></i></td>
+                        <td ng-hide="hideLike"  ng-click="sortData('Like')">Like</td>
+                        <td ng-show="showDisLike"  ng-click="sortData('DisLike')">Dislike</td>
+                        <td>Status</td>
+                        <td>Like/Dislike</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in mes | filter:{Name:searchString} | orderBy:sortColumn:reverse">
+                        <td>{{item.Name}}</td>
+                        <td ng-hide="hideLike">{{item.Like|number:0}}</td>
+                        <td ng-show="showDisLike">{{item.DisLike|number:0}}</td>
+                        <td>{{item.Status| setActive}}</td>
+                        <td><button class="btn-success" ng-click="increaseLike(item)">Like</button> <button class="btn-danger" ng-click="increaseDisLike(item)">Like</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
