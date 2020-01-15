@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewData["Title"] = "ModuleAndController";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section angularSC{ 
+    <script src="~/angularjs/app.js"></script>
+}
+<div ng-app="MyModule">
+    <div ng-controller="myController">
+        <b>{{message}}</b>
+        <div class="info" ng-model="myInfo">
+            FirstName: <input ng-model="myInfo.firstName" id="fistName" />
+            <br />
+            LastName: <input ng-model="myInfo.lastName" />
+            <br />
+            Tuổi: <input  ng-model="myInfo.age"/>
+
+            <br />
+
+            Tên: {{myInfo.firstName}} {{myInfo.lastName}}
+            <br />
+            Tuổi: {{myInfo.age}}
+            <br />
+            Giới tính: {{myInfo.gender}}
+        </div>
+    </div>
+    <div ng-controller="myController2">
+        <b>{{xinchao}}</b>
+    </div>
+</div>
+

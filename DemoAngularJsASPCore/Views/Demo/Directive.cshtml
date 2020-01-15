@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewData["Title"] = "Directive";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section angularSC{ 
+    <script src="~/angularjs/directive.js"></script>
+
+}
+<br />
+<br />
+<br />
+<br />
+<div ng-app="MyApp" class="row" ng-init="names=['Tuyen','Viet','Nam','Hanh','Minh']">
+    Switch:  <select ng-model="myVar">
+        <option value="dogs">DOG</option>
+        <option value="cats">CAT</option>
+        <option value="cow">COW</option>
+    </select>
+    <div ng-switch="myVar">
+        <div ng-switch-when="dogs">
+            <h1>Dogs</h1>
+        </div>
+        <div ng-switch-when="cats">
+            <h1>Cats</h1>
+        </div>
+        <div ng-switch-when="cow">
+            <h1>Cow</h1>
+        </div>
+        <div ng-switch-default>
+            <h1>Switch</h1>
+        </div>
+    </div>
+    <ul>
+        <li ng-repeat="item in names">
+            {{item}}
+        </li>
+    </ul>
+    <welcome-text></welcome-text>
+    <div welcome-text>
+
+    </div>
+    <div ng-controller="myController" class="row">
+        {{name}}
+    </div>
+</div>
+

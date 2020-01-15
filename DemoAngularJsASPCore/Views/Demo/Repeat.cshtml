@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewData["Title"] = "Repeat";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section angularSC{
+    <script src="~/angularjs/repeat/repeat.js"></script>
+}
+<div ng-app="MyApp">
+    <div ng-controller="repeatController">
+        <div class="row">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td>ID</td>
+                        <td style="text-align:center">Tên</td>
+                        <td style="text-align:center">Họ</td>
+                        <td style="text-align:center">Age</td>
+                        <td style="text-align:center">Action</td>
+
+                    </tr>
+                </thead>
+                <tbody >
+                    <tr ng-repeat="item in listEmp">
+                        <td>{{item.id}}</td>
+                        <td style="text-align:center">{{item.firstName}}</td>
+                        <td style="text-align:center">{{item.lastName}}</td>
+                        <td style="text-align:center">{{item.age}}</td>
+                        <td style="text-align:center"><button  class="btn btn-success" data-id="{{item.id}}">Xóa</button>&nbsp;&nbsp;<button data-id="{{item.id}}" class="btn btn-danger">Sửa</button></td>
+
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+
+
+    <div ng-controller="nestedRepeatController">
+        <ul ng-repeat="country in countries">
+            <li>
+                {{$index}}  <!--Index-->  {{country.name}}
+
+                <ul>
+                    <li ng-repeat="city in country.cities">
+                        {{city.name}}  <!--parent index--> <space></space> Parent Index : {{$parent.$index}}
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+

@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "FilterA";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@section angularSC{
+<script src="~/angularjs/filterAngularJs.js"></script>
+}
+
+<div ng-app="filterAngular">
+    <div ng-controller="myController">
+        <div class="row">
+            <br />
+            <div class="row"></div>
+            Tìm Kiếm : <input type="text" ng-model="searchString" />
+            Sắp xếp :
+            <select ng-model="sortColumn">
+                <option value="Name">Tăng dần theo Tên</option>
+                <option value="Like">Tăng dần theo Like</option>
+                <option value="DisLike">Tăng dần theo Dislike</option>
+                <option value="-Name">Giảm dần theo Tên</option>
+                <option value="-Like">Giảm dần theo Like</option>
+                <option value="-DisLike">Giảm dần theo Dislike</option>
+            </select>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <td>Name</td>
+                        <td>Like</td>
+                        <td>Dislike</td>
+                        <td>DateBirth</td>
+                        <td>Status</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in listLanguages | filter: {Name: searchString} | orderBy:sortColumn">
+                        <td>{{item.Name}}</td>
+                        <td>{{item.Like | number:0}}</td>
+                        <td>{{item.DisLike| currency: number:0}}</td>
+                        <td>{{item.DateBirth|date:"dd/MM/yyyy"}}</td>
+                        <td>{{item.Status|boolStatus}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

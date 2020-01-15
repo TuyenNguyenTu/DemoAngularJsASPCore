@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] = "Scope";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section angularSC{
+    <script src="~/angularjs/scopeDemo/scopeApp.js"></script>
+}
+<div ng-app="scopeDemo" ng-init="name='Tuyên'">
+    <div ng-controller="mainController">
+        {{name}}
+        <br />
+        <div ng-controller="myController">
+            {{name}}
+        </div>
+        <div ng-controller="yourController">
+            {{name}}
+        </div>
+    </div>
+    {{name}}
+
+</div>

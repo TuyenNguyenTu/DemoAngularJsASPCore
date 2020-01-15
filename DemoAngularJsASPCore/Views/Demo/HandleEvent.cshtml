@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewData["Title"] = "HandleEvent";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section angularSC{
+    <script src="~/angularjs/handleEvent.js"></script>
+}
+<div ng-app="handleEvent" class="row">
+    <div class="col-lg-10" ng-controller="myController">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td style="text-align:center">Name</td>
+                    <td style="text-align:center">Likes</td>
+                    <td style="text-align:center">Dislikes</td>
+                    <td style="text-align:center">Like/Dislike</td>
+                </tr>
+            </thead>
+            <tbody ng-repeat="item in techLang">
+                <tr>
+                    <td style="text-align:center">{{item.Name}}</td>
+                    <td style="text-align:center">{{item.Like}}</td>
+                    <td style="text-align:center">{{item.DisLike}}</td>                    
+                    <td style="text-align:center"><button class="btn btn-success"  ng-click="IncreaseLike(item)">Like</button>&nbsp;&nbsp;<button ng-click="IncreaseDisLike(item)" class="btn btn-danger">DisLike</button></td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
