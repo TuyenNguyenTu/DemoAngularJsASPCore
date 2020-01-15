@@ -23,6 +23,7 @@ app.controller('myControl', ['$scope', function ($scope) {
     $scope.increaseDisLike = function(mes){
         mes.DisLike++;
     };
+    //sắp xếp
     $scope.sortData = function (columnName) {
         if ($scope.sortColumn == columnName)
         {
