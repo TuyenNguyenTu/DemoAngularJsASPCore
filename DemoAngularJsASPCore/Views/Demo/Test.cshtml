@@ -1,0 +1,22 @@
+﻿
+<table class="table-hover table">
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Like</td>
+            <td>Dislike</td>
+            <td>Date Of Birth</td>
+            <td>Status</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in mes">
+            <td>{{item.Name}}</td>
+            <td>{{item.Like}}</td>
+            <td>{{item.DisLike}}</td>
+            <td>{{item.DateBirth | date:'dd/MM/yyyy'}}</td>
+            <td>{{item.Status | boolStatus}}</td>
+        </tr>
+    </tbody>
+</table>
+

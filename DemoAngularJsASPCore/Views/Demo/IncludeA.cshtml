@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewData["Title"] = "IncludeA";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@section angularSC{
+    <script src="~/angularjs/IncludesA.js"></script>
+}
+<div ng-app="MyApp">
+    <div ng-controller="myController">
+        <select ng-model="selectPage">
+            <option value="Test">Table</option>
+            <option value="List">List</option>
+        </select>
+        <div ng-include="selectPage">
+
+        </div>
+    </div>
+</div>  

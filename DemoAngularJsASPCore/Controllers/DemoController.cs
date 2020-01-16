@@ -44,5 +44,17 @@ namespace DemoAngularJsASPCore.Controllers
         {
             return View();
         }
+        public IActionResult IncludeA()
+        {
+            return View();
+        }
+        public IActionResult Test()
+        {
+            return View();
+        }
+        public IActionResult List()
+        {
+            return View();
+        }
     }
 }
