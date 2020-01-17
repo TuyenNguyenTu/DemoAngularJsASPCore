@@ -56,5 +56,9 @@ namespace DemoAngularJsASPCore.Controllers
         {
             return View();
         }
+        public IActionResult TestWebApi()
+        {
+            return View();
+        }
     }
 }
