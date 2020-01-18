@@ -60,5 +60,9 @@ namespace DemoAngularJsASPCore.Controllers
         {
             return View();
         }
+        public IActionResult RegisterService()
+        {
+            return View();
+        }
     }
 }

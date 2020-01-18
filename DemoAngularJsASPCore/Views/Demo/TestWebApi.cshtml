@@ -12,6 +12,10 @@
 
 <div ng-app="MyApp">
     <div ng-controller="myController">
+        <br />
+        <div>
+            Search: <input ng-model="searchString" type="text"/>
+        </div>
         <table class="table">
             <thead>
                 <tr>
@@ -22,7 +26,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="item in listEmp">
+                <tr ng-repeat="item in listEmp| filter:searchString">
                     <td>{{item.id}}</td>
                     <td>{{item.name}}</td>
                     <td>{{item.age}}</td>
